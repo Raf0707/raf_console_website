@@ -57,6 +57,21 @@ export default function ContactPage() {
                 Email: <a href="mailto:raf_android-dev@mail.ru" className="text-blue-600 dark:text-blue-400 hover:underline">raf_android-dev@mail.ru</a>
             </p>
 
+            <br/><br/>
+
+            <section className="text-center space-y-6">
+                <div className="bg-muted text-muted-foreground rounded-2xl p-6 max-w-4xl mx-auto">
+                    <h2 className="text-4xl font-bold mb-6 text-center">For developers</h2>
+                    <p className="text-lg  mb-10 text-center">
+                        Do you want to work in our studio or participate in partner program projects? Join the developer chat!
+                    </p>
+
+                    <p className='font-medium text-lg self-center text-center mt-4'>
+                        Telegram: <a href="https://t.me/rafConsoleStudio" className="text-blue-600 dark:text-blue-400 hover:underline">@Raf&lt;/&gt;Console Studio</a>
+                    </p>
+                </div>
+            </section>
+
         </div>
     );
 }
