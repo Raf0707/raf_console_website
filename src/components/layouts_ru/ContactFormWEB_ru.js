@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
-export default function ContactFormRu() {
+export default function ContactFormWEBRu() {
     const [formData, setFormData] = useState({
         name: '',
         contact: '',
@@ -66,8 +66,8 @@ export default function ContactFormRu() {
     };
 
     const sendToTelegram = async (data) => {
-        const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
-        const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
+        const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN_WEB;
+        const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID_WEB;
 
         const text = `📌 Новая заявка:\n\n👤 Имя: ${data.name}\n📞 Контакты: ${data.contact}\n📝 Сообщение: ${data.comment}`;
 

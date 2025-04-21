@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 import Header from '@/components/layouts/Header';
 import Footer from '@/components/layouts/Footer';
-/*import { useToast } from "@/hooks/use-toast";*/
+import { useToast } from "@/hooks/use-toast";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-
+          <useToast/>
           <Header />
           <div className='max-w-7xl m-auto px-4 xl:px-0'>
             {children}
