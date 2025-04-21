@@ -1,9 +1,21 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+
 export default function Footer() {
-  return (
-    <footer className='flex justify-center mt-[128px] mb-[40px]'>
+    const pathname = usePathname();
+
+    const isRussian = pathname.includes('_ru') || pathname.includes('/ru');
+
+    const copyright = isRussian
+        ? '© 2025 Raf</>Console Studio. Все права защищены.'
+        : '© 2025 Raf</>Console Studio. All rights reserved.';
+
+    return (
+        <footer className='flex justify-center mt-[128px] mb-[40px]'>
       <span className='text-neutral-500 text-center'>
-        © 2025 Raf&lt;/&gt;Console Studio. All rights reserved.
+        {copyright}
       </span>
-    </footer>
-  );
+        </footer>
+    );
 }
