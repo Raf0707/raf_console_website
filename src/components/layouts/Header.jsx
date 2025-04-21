@@ -33,19 +33,28 @@ export default function Header() {
     const isRussian = pathname.includes('_ru');
 
     // Получаем базовый путь без языкового суффикса
-    let basePath = pathname;
+    let newPath = pathname;
     if (isRussian) {
-      basePath = pathname.replace('_ru', '');
-    } else if (pathname !== '/') {
-      // Для английской версии добавляем суффикс _ru
-      basePath = pathname + '_ru';
+      // Если сейчас русский, переключаем на английский
+      newPath = pathname.replace('_ru', '');
     } else {
-      // Для главной страницы
-      basePath = '/ru';
+      // Если сейчас английский, переключаем на русский
+      // Проверяем, не корневая ли это страница
+      if (pathname === '/') {
+        newPath = '/main_ru';
+      } else {
+        // Разбиваем путь на части и добавляем _ru перед последним сегментом
+        const pathSegments = pathname.split('/').filter(Boolean);
+        if (pathSegments.length > 0) {
+          const lastSegment = pathSegments[pathSegments.length - 1];
+          pathSegments[pathSegments.length - 1] = lastSegment + '_ru';
+          newPath = '/' + pathSegments.join('/');
+        }
+      }
     }
 
     // Перенаправляем на соответствующую версию
-    router.push(basePath);
+    router.push(newPath);
   };
 
   // Определяем текущий язык для отображения правильных ссылок

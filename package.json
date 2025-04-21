@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "https://Raf0707.github.io/raf_console_studio/main",
+  "homepage": "https://Raf0707.github.io/raf_console_studio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out",
+    "clean": "rimraf .next out",
+    "deploy:full": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
@@ -31,10 +33,11 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "autoprefixer": "^10.4.16",
-    "eslint": "^9",
+    "eslint": "^8.57.0",
     "eslint-config-next": "14.1.0",
     "gh-pages": "^6.3.0",
     "postcss": "^8",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.1"
   }
 }
